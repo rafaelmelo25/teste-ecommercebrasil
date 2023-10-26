@@ -1,0 +1,41 @@
+.bg-dark-blue {
+    background-color: #0B1641;
+}
+
+.card {
+    border-radius: 8px;
+}
+
+.bg-cards {
+    /* border-radius: 20px; */
+    background: linear-gradient(45deg, #0B1641 0%, #C70160 100%);
+}
+
+.btn-pink {
+    background-color: #C70160 !important;
+    color: #fff !important;
+}
+
+.btn-green {
+    border-radius: 8px !important;
+    background: #16857B !important;
+    color: #fff !important;
+}
+
+.card-body {
+    border-radius: 0 0 8px 8px;
+    background: #0B1641;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    color: #fff;
+}
+
+.text-price {
+    color: #FFF;
+    text-align: right;
+    font-family: Roboto;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 100;
+    line-height: normal;
+    text-decoration-line: line-through;
+}
