@@ -6,317 +6,127 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/fontawesome.min.css" integrity="sha384-QYIZto+st3yW+o8+5OHfT6S482Zsvz2WfOzpFSXMF9zqeLcFV0/wlZpMtyFcZALm" crossorigin="anonymous">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-
     <title>Game Tracker</title>
 </head>
-<section class="bg-dark-blue">
-    <div class="container">
-        <header>
-            <nav class="navbar navbar-light">
-                <a class="navbar-brand text-white" href="#">
-                <img src="assets/images/Vector.png" width="30" height="30" class="d-inline-block align-top" alt="">
-                Game <strong>Tracker</strong>
-                </a>
-            </nav>
-        </header>
-    </div>
-</section>
 <body>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <section class="bg-dark-blue">
+        <div class="container">
+            <header>
+                <nav class="navbar navbar-light">
+                    <a class="navbar-brand text-white" href="#">
+                    <img src="assets/images/Vector.png" width="30" height="30" class="d-inline-block align-top" alt="">
+                    Game <strong>Tracker</strong>
+                    </a>
+                </nav>
+            </header>
+        </div>
+    </section>
+
     <section class="bg-cards">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
                     <h2 class="titulo text-white">Ofertas</h2>
                 </div>
-                
             </div>
             <div class="row">
                 <div class="col-md-6">
-                    
-                        <div class="input-group">
-                            <span class="input-group-text"><i class="bi bi-search"></i></span>
-                            <input type="text" class="form-control" placeholder="Pesquisar...">
-                          </div>
-                    
+                    <div class="input-group">
+                        <span class="input-group-text"><i class="bi bi-search"></i></span>
+                        <input type="text" class="form-control" placeholder="Pesquisar...">
+                    </div>
                 </div>
                 <div class="col-md-3 d-flex justify-content-end">
                     <span>ordenar por:</span>
                     <select class="form-select" aria-label="Default select example">
-                    <option selected>Open this select menu</option>
-                    <option value="1">One</option>
-                    <option value="2">Two</option>
-                    <option value="3">Three</option>
+                        <option selected>Open this select menu</option>
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
                     </select>
                 </div>
             </div>
+            <div class="row" id="gameCards"></div>
             <div class="row">
-                <div class="col-md-4 py-3">
-                    <div class="card" style="width: 18rem;">
-                        <img class="card-img-top" src="assets/images/bg1.png" alt="Card image cap">
-                        <div class="card-body">
-                            <h5 class="card-title">RAGE 2</h5>
-                            <div class="d-flex">
-                                <div>
-                                    <a href="#" class="btn btn-pink">Detalhes</a>
-                                </div>
-                                <div class="price">
-                                    <p class="card-text text-price">$ 199,00</p>
-                                    <p class="card-text"><strong>$ 0,00</strong></p>
-                                </div>
-                                <div>
-                                    <a href="#" class="btn btn-green">GRÁTIS</a>
-                                </div>
-
-                            </div>
-                            
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 py-3">
-                    <div class="card" style="width: 18rem;">
-                        <img class="card-img-top" src="assets/images/bg1.png" alt="Card image cap">
-                        <div class="card-body">
-                            <h5 class="card-title">RAGE 2</h5>
-                            <div class="d-flex">
-                                <div>
-                                    <a href="#" class="btn btn-pink">Detalhes</a>
-                                </div>
-                                <div class="price">
-                                    <p class="card-text text-price">$ 199,00</p>
-                                    <p class="card-text"><strong>$ 0,00</strong></p>
-                                </div>
-                                <div>
-                                    <a href="#" class="btn btn-green">GRÁTIS</a>
-                                </div>
-
-                            </div>
-                            
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 py-3">
-                    <div class="card" style="width: 18rem;">
-                        <img class="card-img-top" src="assets/images/bg1.png" alt="Card image cap">
-                        <div class="card-body">
-                            <h5 class="card-title">RAGE 2</h5>
-                            <div class="d-flex">
-                                <div>
-                                    <a href="#" class="btn btn-pink">Detalhes</a>
-                                </div>
-                                <div class="price">
-                                    <p class="card-text text-price">$ 199,00</p>
-                                    <p class="card-text"><strong>$ 0,00</strong></p>
-                                </div>
-                                <div>
-                                    <a href="#" class="btn btn-green">GRÁTIS</a>
-                                </div>
-
-                            </div>
-                            
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 py-3">
-                    <div class="card" style="width: 18rem;">
-                        <img class="card-img-top" src="assets/images/bg1.png" alt="Card image cap">
-                        <div class="card-body">
-                            <h5 class="card-title">RAGE 2</h5>
-                            <div class="d-flex">
-                                <div>
-                                    <a href="#" class="btn btn-pink">Detalhes</a>
-                                </div>
-                                <div class="price">
-                                    <p class="card-text text-price">$ 199,00</p>
-                                    <p class="card-text"><strong>$ 0,00</strong></p>
-                                </div>
-                                <div>
-                                    <a href="#" class="btn btn-green">GRÁTIS</a>
-                                </div>
-
-                            </div>
-                            
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 py-3">
-                    <div class="card" style="width: 18rem;">
-                        <img class="card-img-top" src="assets/images/bg1.png" alt="Card image cap">
-                        <div class="card-body">
-                            <h5 class="card-title">RAGE 2</h5>
-                            <div class="d-flex">
-                                <div>
-                                    <a href="#" class="btn btn-pink">Detalhes</a>
-                                </div>
-                                <div class="price">
-                                    <p class="card-text text-price">$ 199,00</p>
-                                    <p class="card-text"><strong>$ 0,00</strong></p>
-                                </div>
-                                <div>
-                                    <a href="#" class="btn btn-green">GRÁTIS</a>
-                                </div>
-
-                            </div>
-                            
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 py-3">
-                    <div class="card" style="width: 18rem;">
-                        <img class="card-img-top" src="assets/images/bg1.png" alt="Card image cap">
-                        <div class="card-body">
-                            <h5 class="card-title">RAGE 2</h5>
-                            <div class="d-flex">
-                                <div>
-                                    <a href="#" class="btn btn-pink">Detalhes</a>
-                                </div>
-                                <div class="price">
-                                    <p class="card-text text-price">$ 199,00</p>
-                                    <p class="card-text"><strong>$ 0,00</strong></p>
-                                </div>
-                                <div>
-                                    <a href="#" class="btn btn-green">GRÁTIS</a>
-                                </div>
-
-                            </div>
-                            
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 py-3">
-                    <div class="card" style="width: 18rem;">
-                        <img class="card-img-top" src="assets/images/bg1.png" alt="Card image cap">
-                        <div class="card-body">
-                            <h5 class="card-title">RAGE 2</h5>
-                            <div class="d-flex">
-                                <div>
-                                    <a href="#" class="btn btn-pink">Detalhes</a>
-                                </div>
-                                <div class="price">
-                                    <p class="card-text text-price">$ 199,00</p>
-                                    <p class="card-text"><strong>$ 0,00</strong></p>
-                                </div>
-                                <div>
-                                    <a href="#" class="btn btn-green">GRÁTIS</a>
-                                </div>
-
-                            </div>
-                            
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 py-3">
-                    <div class="card" style="width: 18rem;">
-                        <img class="card-img-top" src="assets/images/bg1.png" alt="Card image cap">
-                        <div class="card-body">
-                            <h5 class="card-title">RAGE 2</h5>
-                            <div class="d-flex">
-                                <div>
-                                    <a href="#" class="btn btn-pink">Detalhes</a>
-                                </div>
-                                <div class="price">
-                                    <p class="card-text text-price">$ 199,00</p>
-                                    <p class="card-text"><strong>$ 0,00</strong></p>
-                                </div>
-                                <div>
-                                    <a href="#" class="btn btn-green">GRÁTIS</a>
-                                </div>
-
-                            </div>
-                            
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 py-3">
-                    <div class="card" style="width: 18rem;">
-                        <img class="card-img-top" src="assets/images/bg1.png" alt="Card image cap">
-                        <div class="card-body">
-                            <h5 class="card-title">RAGE 2</h5>
-                            <div class="d-flex">
-                                <div>
-                                    <a href="#" class="btn btn-pink">Detalhes</a>
-                                </div>
-                                <div class="price">
-                                    <p class="card-text text-price">$ 199,00</p>
-                                    <p class="card-text"><strong>$ 0,00</strong></p>
-                                </div>
-                                <div>
-                                    <a href="#" class="btn btn-green">GRÁTIS</a>
-                                </div>
-
-                            </div>
-                            
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 py-3">
-                    <div class="card" style="width: 18rem;">
-                        <img class="card-img-top" src="assets/images/bg1.png" alt="Card image cap">
-                        <div class="card-body">
-                            <h5 class="card-title">RAGE 2</h5>
-                            <div class="d-flex">
-                                <div>
-                                    <a href="#" class="btn btn-pink">Detalhes</a>
-                                </div>
-                                <div class="price">
-                                    <p class="card-text text-price">$ 199,00</p>
-                                    <p class="card-text"><strong>$ 0,00</strong></p>
-                                </div>
-                                <div>
-                                    <a href="#" class="btn btn-green">GRÁTIS</a>
-                                </div>
-
-                            </div>
-                            
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 py-3">
-                    <div class="card" style="width: 18rem;">
-                        <img class="card-img-top" src="assets/images/bg1.png" alt="Card image cap">
-                        <div class="card-body">
-                            <h5 class="card-title">RAGE 2</h5>
-                            <div class="d-flex">
-                                <div>
-                                    <a href="#" class="btn btn-pink">Detalhes</a>
-                                </div>
-                                <div class="price">
-                                    <p class="card-text text-price">$ 199,00</p>
-                                    <p class="card-text"><strong>$ 0,00</strong></p>
-                                </div>
-                                <div>
-                                    <a href="#" class="btn btn-green">GRÁTIS</a>
-                                </div>
-
-                            </div>
-                            
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 py-3">
-                    <div class="card" style="width: 18rem;">
-                        <img class="card-img-top" src="assets/images/bg1.png" alt="Card image cap">
-                        <div class="card-body">
-                            <h5 class="card-title">RAGE 2</h5>
-                            <div class="d-flex">
-                                <div>
-                                    <a href="#" class="btn btn-pink">Detalhes</a>
-                                </div>
-                                <div class="price">
-                                    <p class="card-text text-price">$ 199,00</p>
-                                    <p class="card-text"><strong>$ 0,00</strong></p>
-                                </div>
-                                <div>
-                                    <a href="#" class="btn btn-green">GRÁTIS</a>
-                                </div>
-
-                            </div>
-                            
-                        </div>
-                    </div>
+                <div class="col-md-12 text-center">
+                    <button id="loadMoreButton" class="btn btn-primary">Carregar Mais</button>
                 </div>
             </div>
         </div>
     </section>
+
+    <script>
+        // Dados do JSON
+        const gamesData = [
+            {
+                "title": "Jogo 1",
+                "metacriticScore": "85",
+                "steamRatingText": "Muito Positivo",
+                "steamRatingPercent": "90",
+                "salePrice": "19.99",
+                "savings": "50.0",
+                "thumb": "https://example.com/game1.jpg"
+            },
+            {
+                "title": "Jogo 2",
+                "metacriticScore": "90",
+                "steamRatingText": "Muito Positivo",
+                "steamRatingPercent": "92",
+                "salePrice": "24.99",
+                "savings": "40.0",
+                "thumb": "https://example.com/game2.jpg"
+            },
+            // Adicione mais jogos conforme necessário
+        ];
+
+        const gameCardsContainer = document.getElementById("gameCards");
+        const loadMoreButton = document.getElementById("loadMoreButton");
+
+        let startIndex = 0; // Inicie com o primeiro jogo
+        const gamesPerPage = 12; // Quantidade de jogos por página
+
+        function createGameCard(game) {
+            const cardDiv = document.createElement("div");
+            cardDiv.className = "col-md-4 py-3";
+
+            const cardHTML = `
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="${game.thumb}" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">${game.title}</h5>
+                        <p class="card-text">Metacritic Score: ${game.metacriticScore}</p>
+                        <p class="card-text">Steam Rating: ${game.steamRatingText} (${game.steamRatingPercent}%)</p>
+                        <p class="card-text">Price: ${game.salePrice}</p>
+                        <p class="card-text">Savings: ${game.savings}%</p>
+                        <a href="#" class="btn btn-primary">Metacritic</a>
+                        <a href="#" class="btn btn-success">Buy Now</a>
+                    </div>
+                </div>
+            `;
+
+            cardDiv.innerHTML = cardHTML;
+            gameCardsContainer.appendChild(cardDiv);
+        }
+
+        function loadMoreGames() {
+            for (let i = startIndex; i < startIndex + gamesPerPage && i < gamesData.length; i++) {
+                createGameCard(gamesData[i]);
+            }
+
+            startIndex += gamesPerPage;
+
+            if (startIndex >= gamesData.length) {
+                loadMoreButton.style.display = "none"; // Esconder o botão quando não houver mais jogos
+            }
+        }
+
+        // Carregar os primeiros jogos
+        loadMoreGames();
+
+        // Lidar com o clique no botão "Carregar Mais"
+        loadMoreButton.addEventListener("click", loadMoreGames);
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </body>
 </html>
