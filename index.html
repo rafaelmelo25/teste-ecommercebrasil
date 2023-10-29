@@ -14,8 +14,8 @@
             <header>
                 <nav class="navbar navbar-light">
                     <a class="navbar-brand text-white" href="#">
-                    <img src="assets/images/Vector.png" width="30" height="30" class="d-inline-block align-top" alt="">
-                    Game <strong>Tracker</strong>
+                        <img src="assets/images/Vector.png" width="30" height="30" class="d-inline-block align-top" alt="">
+                        Game <strong>Tracker</strong>
                     </a>
                 </nav>
             </header>
@@ -56,27 +56,51 @@
     </section>
 
     <script>
-        // Dados do JSON
+        // JSON data
         const gamesData = [
             {
-                "title": "Jogo 1",
-                "metacriticScore": "85",
-                "steamRatingText": "Muito Positivo",
-                "steamRatingPercent": "90",
-                "salePrice": "19.99",
-                "savings": "50.0",
-                "thumb": "https://example.com/game1.jpg"
+                "internalName": "TRIBEPRIMITIVEBUILDER",
+                "title": "Tribe: Primitive Builder",
+                "metacriticLink": "/game/tribe-primitive-builder/",
+                "dealID": "6bZFwdPi%2FFaGKiWgaAW31BeYr0UMDT8j8djTvDFQwOc%3D",
+                "storeID": "1",
+                "gameID": "259641",
+                "salePrice": "19.06",
+                "normalPrice": "31.98",
+                "isOnSale": "1",
+                "savings": "40.400250",
+                "metacriticScore": "64",
+                "steamRatingText": "Very Positive",
+                "steamRatingPercent": "82",
+                "steamRatingCount": "276",
+                "steamAppID": "1059900",
+                "releaseDate": 1697068800,
+                "lastChange": 1698331451,
+                "dealRating": "10.0",
+                "thumb": "https://cdn.cloudflare.steamstatic.com/steam/apps/1059900/capsule_sm_120.jpg?t=1698334502"
             },
             {
-                "title": "Jogo 2",
-                "metacriticScore": "90",
-                "steamRatingText": "Muito Positivo",
-                "steamRatingPercent": "92",
-                "salePrice": "24.99",
-                "savings": "40.0",
-                "thumb": "https://example.com/game2.jpg"
+                "internalName": "PANDEMICTRAIN",
+                "title": "Pandemic Train",
+                "metacriticLink": "/game/pandemic-train/",
+                "dealID": "wShuABF9rfBbfqcMphqKWSZx2M2jovCZ5f9eQSyX5nY%3D",
+                "storeID": "1",
+                "gameID": "276134",
+                "salePrice": "16.98",
+                "normalPrice": "31.98",
+                "isOnSale": "1",
+                "savings": "46.904315",
+                "metacriticScore": "0",
+                "steamRatingText": "Mostly Positive",
+                "steamRatingPercent": "71",
+                "steamRatingCount": "118",
+                "steamAppID": "1379600",
+                "releaseDate": 1697587200,
+                "lastChange": 1698254403,
+                "dealRating": "10.0",
+                "thumb": "https://cdn.cloudflare.steamstatic.com/steam/apps/1379600/capsule_sm_120.jpg?t=1697653152"
             },
-            // Adicione mais jogos conforme necessário
+            // Insira os outros dados JSON aqui
         ];
 
         const gameCardsContainer = document.getElementById("gameCards");
@@ -96,9 +120,9 @@
                         <h5 class="card-title">${game.title}</h5>
                         <p class="card-text">Metacritic Score: ${game.metacriticScore}</p>
                         <p class="card-text">Steam Rating: ${game.steamRatingText} (${game.steamRatingPercent}%)</p>
-                        <p class="card-text">Price: ${game.salePrice}</p>
+                        <p class="card-text">Price: $${game.salePrice}</p>
                         <p class="card-text">Savings: ${game.savings}%</p>
-                        <a href="#" class="btn btn-primary">Metacritic</a>
+                        <a href="${game.metacriticLink}" class="btn btn-primary">Metacritic</a>
                         <a href="#" class="btn btn-success">Buy Now</a>
                     </div>
                 </div>
