@@ -33,81 +33,285 @@
                 <div class="col-md-6">
                     <div class="input-group">
                         <span class="input-group-text"><i class="bi bi-search"></i></span>
-                        <input type="text" class="form-control" placeholder="Pesquisar...">
+                        <input type="text" id="searchInput" class="form-control" placeholder="Pesquisar...">
                     </div>
                 </div>
                 <div class="col-md-3 d-flex justify-content-end">
-                    <span>ordenar por:</span>
-                    <select class="form-select" aria-label="Default select example">
-                        <option selected>Open this select menu</option>
-                        <option value="1">One</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
+                    <span>Ordenar por:</span>
+                    <select id="sortSelect" class="form-select" aria-label="Default select example">
+                        <option value="title">Título</option>
+                        <option value="releaseDate">Data de Lançamento</option>
+                        <option value="salePrice">Preço</option>
+                        <option value="steamRatingCount">Mais Vendidos</option>
                     </select>
                 </div>
             </div>
             <div class="row" id="gameCards"></div>
-            <div class="row">
-                <div class="col-md-12 text-center">
-                    <button id="loadMoreButton" class="btn btn-primary">Carregar Mais</button>
-                </div>
-            </div>
         </div>
     </section>
 
     <script>
         // JSON data
         const gamesData = [
-            {
-                "internalName": "TRIBEPRIMITIVEBUILDER",
-                "title": "Tribe: Primitive Builder",
-                "metacriticLink": "/game/tribe-primitive-builder/",
-                "dealID": "6bZFwdPi%2FFaGKiWgaAW31BeYr0UMDT8j8djTvDFQwOc%3D",
-                "storeID": "1",
-                "gameID": "259641",
-                "salePrice": "19.06",
-                "normalPrice": "31.98",
-                "isOnSale": "1",
-                "savings": "40.400250",
-                "metacriticScore": "64",
-                "steamRatingText": "Very Positive",
-                "steamRatingPercent": "82",
-                "steamRatingCount": "276",
-                "steamAppID": "1059900",
-                "releaseDate": 1697068800,
-                "lastChange": 1698331451,
-                "dealRating": "10.0",
-                "thumb": "https://cdn.cloudflare.steamstatic.com/steam/apps/1059900/capsule_sm_120.jpg?t=1698334502"
-            },
-            {
-                "internalName": "PANDEMICTRAIN",
-                "title": "Pandemic Train",
-                "metacriticLink": "/game/pandemic-train/",
-                "dealID": "wShuABF9rfBbfqcMphqKWSZx2M2jovCZ5f9eQSyX5nY%3D",
-                "storeID": "1",
-                "gameID": "276134",
-                "salePrice": "16.98",
-                "normalPrice": "31.98",
-                "isOnSale": "1",
-                "savings": "46.904315",
-                "metacriticScore": "0",
-                "steamRatingText": "Mostly Positive",
-                "steamRatingPercent": "71",
-                "steamRatingCount": "118",
-                "steamAppID": "1379600",
-                "releaseDate": 1697587200,
-                "lastChange": 1698254403,
-                "dealRating": "10.0",
-                "thumb": "https://cdn.cloudflare.steamstatic.com/steam/apps/1379600/capsule_sm_120.jpg?t=1697653152"
-            },
-            // Insira os outros dados JSON aqui
+            
+  {
+    "internalName": "TRIBEPRIMITIVEBUILDER",
+    "title": "Tribe: Primitive Builder",
+    "metacriticLink": "/game/tribe-primitive-builder/",
+    "dealID": "6bZFwdPi%2FFaGKiWgaAW31BeYr0UMDT8j8djTvDFQwOc%3D",
+    "storeID": "1",
+    "gameID": "259641",
+    "salePrice": "19.06",
+    "normalPrice": "31.98",
+    "isOnSale": "1",
+    "savings": "40.400250",
+    "metacriticScore": "64",
+    "steamRatingText": "Very Positive",
+    "steamRatingPercent": "82",
+    "steamRatingCount": "276",
+    "steamAppID": "1059900",
+    "releaseDate": 1697068800,
+    "lastChange": 1698331451,
+    "dealRating": "10.0",
+    "thumb": "https://cdn.cloudflare.steamstatic.com/steam/apps/1059900/capsule_sm_120.jpg?t=1698334502"
+  },
+  {
+    "internalName": "PANDEMICTRAIN",
+    "title": "Pandemic Train",
+    "metacriticLink": "/game/pandemic-train/",
+    "dealID": "wShuABF9rfBbfqcMphqKWSZx2M2jovCZ5f9eQSyX5nY%3D",
+    "storeID": "1",
+    "gameID": "276134",
+    "salePrice": "16.98",
+    "normalPrice": "31.98",
+    "isOnSale": "1",
+    "savings": "46.904315",
+    "metacriticScore": "0",
+    "steamRatingText": "Mostly Positive",
+    "steamRatingPercent": "71",
+    "steamRatingCount": "118",
+    "steamAppID": "1379600",
+    "releaseDate": 1697587200,
+    "lastChange": 1698254403,
+    "dealRating": "10.0",
+    "thumb": "https://cdn.cloudflare.steamstatic.com/steam/apps/1379600/capsule_sm_120.jpg?t=1697653152"
+  },
+  {
+    "internalName": "FARMERSLIFE",
+    "title": "Farmers Life",
+    "metacriticLink": "/game/farmers-life/",
+    "dealID": "Q5iBZK155bPQIxqzKeZThJhpw8SwHAKoYhY7QeaVjtE%3D",
+    "storeID": "1",
+    "gameID": "233029",
+    "salePrice": "15.46",
+    "normalPrice": "31.98",
+    "isOnSale": "1",
+    "savings": "51.657286",
+    "metacriticScore": "0",
+    "steamRatingText": "Very Positive",
+    "steamRatingPercent": "84",
+    "steamRatingCount": "1172",
+    "steamAppID": "1137750",
+    "releaseDate": 1697760000,
+    "lastChange": 1697813282,
+    "dealRating": "10.0",
+    "thumb": "https://cdn.cloudflare.steamstatic.com/steam/apps/1137750/capsule_sm_120_alt_assets_15.jpg?t=1698426583"
+  },
+  {
+    "internalName": "ALASKANROADTRUCKERS",
+    "title": "Alaskan Road Truckers",
+    "metacriticLink": "/game/alaskan-road-truckers/",
+    "dealID": "fcFOQqb8dz1i3kBOQqaDibO2zfjjGAw1xlkfQB8iiUs%3D",
+    "storeID": "1",
+    "gameID": "263467",
+    "salePrice": "20.68",
+    "normalPrice": "31.98",
+    "isOnSale": "1",
+    "savings": "35.334584",
+    "metacriticScore": "0",
+    "steamRatingText": "Mixed",
+    "steamRatingPercent": "67",
+    "steamRatingCount": "1283",
+    "steamAppID": "849100",
+    "releaseDate": 1697587200,
+    "lastChange": 1698254317,
+    "dealRating": "10.0",
+    "thumb": "https://cdn.cloudflare.steamstatic.com/steam/apps/849100/capsule_sm_120_alt_assets_0.jpg?t=1698439788"
+  },
+  {
+    "internalName": "BENDYANDTHEDARKREVIVAL",
+    "title": "Bendy and the Dark Revival",
+    "metacriticLink": "/game/bendy-and-the-dark-revival/",
+    "dealID": "DtNZYKgPGnvQLW7mKtVgeaXlk6gMxalUlM79B4%2BhH6o%3D",
+    "storeID": "1",
+    "gameID": "253358",
+    "salePrice": "4.49",
+    "normalPrice": "29.99",
+    "isOnSale": "1",
+    "savings": "85.028343",
+    "metacriticScore": "72",
+    "steamRatingText": "Very Positive",
+    "steamRatingPercent": "94",
+    "steamRatingCount": "8168",
+    "steamAppID": "1063660",
+    "releaseDate": 1668470400,
+    "lastChange": 1698343093,
+    "dealRating": "9.3",
+    "thumb": "https://cdn.cloudflare.steamstatic.com/steam/apps/1063660/capsule_sm_120.jpg?t=1681216915"
+  },
+  {
+    "internalName": "TITANFALL2",
+    "title": "Titanfall 2",
+    "metacriticLink": "/game/titanfall-2/",
+    "dealID": "gG2%2Bohshlnn7OrFVMY0XyW%2FmVNngWNdY1auy7L5aOAc%3D",
+    "storeID": "1",
+    "gameID": "153781",
+    "salePrice": "4.49",
+    "normalPrice": "29.99",
+    "isOnSale": "1",
+    "savings": "85.028343",
+    "metacriticScore": "86",
+    "steamRatingText": "Very Positive",
+    "steamRatingPercent": "94",
+    "steamRatingCount": "169946",
+    "steamAppID": "1237970",
+    "releaseDate": 1477612800,
+    "lastChange": 1698342920,
+    "dealRating": "9.2",
+    "thumb": "https://cdn.cloudflare.steamstatic.com/steam/apps/1237970/capsule_sm_120.jpg?t=1668565264"
+  },
+  {
+    "internalName": "STARWARSSQUADRONS",
+    "title": "Star Wars Squadrons",
+    "metacriticLink": "/game/star-wars-squadrons/",
+    "dealID": "uHEX1%2BFHsCFkAUasLFyJxOzfIrn%2FBIocF2rPbKn7pQ8%3D",
+    "storeID": "1",
+    "gameID": "216984",
+    "salePrice": "3.99",
+    "normalPrice": "39.99",
+    "isOnSale": "1",
+    "savings": "90.022506",
+    "metacriticScore": "79",
+    "steamRatingText": "Mostly Positive",
+    "steamRatingPercent": "70",
+    "steamRatingCount": "21622",
+    "steamAppID": "1222730",
+    "releaseDate": 1601510400,
+    "lastChange": 1698343027,
+    "dealRating": "9.1",
+    "thumb": "https://cdn.cloudflare.steamstatic.com/steam/apps/1222730/capsule_sm_120.jpg?t=1662047498"
+  },
+  {
+    "internalName": "LOSTINRANDOM",
+    "title": "Lost in Random",
+    "metacriticLink": "/game/lost-in-random/",
+    "dealID": "JG7anx%2BKpyTC8VzEJjtLmMYl86iRAw9%2BTDXSgipjURI%3D",
+    "storeID": "1",
+    "gameID": "232447",
+    "salePrice": "2.99",
+    "normalPrice": "29.99",
+    "isOnSale": "1",
+    "savings": "90.030010",
+    "metacriticScore": "78",
+    "steamRatingText": "Very Positive",
+    "steamRatingPercent": "90",
+    "steamRatingCount": "2402",
+    "steamAppID": "1462570",
+    "releaseDate": 1631232000,
+    "lastChange": 1698343232,
+    "dealRating": "9.1",
+    "thumb": "https://cdn.cloudflare.steamstatic.com/steam/apps/1462570/capsule_sm_120.jpg?t=1662047426"
+  },
+  {
+    "internalName": "THEINCREDIBLEADVENTURESOFVANHELSINGFINALCUT",
+    "title": "The Incredible Adventures of Van Helsing Final Cut",
+    "metacriticLink": "/game/the-incredible-adventures-of-van-helsing-final-cut/",
+    "dealID": "HByTzxf7UCLeGfzqvdVuuDSqpZxvNOJgFF%2BeK7euvHI%3D",
+    "storeID": "1",
+    "gameID": "146865",
+    "salePrice": "4.49",
+    "normalPrice": "44.99",
+    "isOnSale": "1",
+    "savings": "90.020004",
+    "metacriticScore": "79",
+    "steamRatingText": "Mostly Positive",
+    "steamRatingPercent": "76",
+    "steamRatingCount": "1670",
+    "steamAppID": "400170",
+    "releaseDate": 1446768000,
+    "lastChange": 1698343952,
+    "dealRating": "9.1",
+    "thumb": "https://cdn.cloudflare.steamstatic.com/steam/apps/400170/capsule_sm_120.jpg?t=1618303802"
+  },
+  {
+    "internalName": "HELLBLADESENUASSACRIFICE",
+    "title": "Hellblade: Senua's Sacrifice",
+    "metacriticLink": "/game/hellblade-senuas-sacrifice/",
+    "dealID": "0yCPVxMJHRP8HMLIwyg3p9IH4UcVUU0zVGDepa%2BecJI%3D",
+    "storeID": "1",
+    "gameID": "169840",
+    "salePrice": "4.49",
+    "normalPrice": "29.99",
+    "isOnSale": "1",
+    "savings": "85.028343",
+    "metacriticScore": "83",
+    "steamRatingText": "Very Positive",
+    "steamRatingPercent": "91",
+    "steamRatingCount": "49824",
+    "steamAppID": "414340",
+    "releaseDate": 1502064000,
+    "lastChange": 1698343148,
+    "dealRating": "9.0",
+    "thumb": "https://cdn.cloudflare.steamstatic.com/steam/apps/414340/capsule_sm_120.jpg?t=1661444431"
+  },
+  {
+    "internalName": "ULTRASTREETFIGHTERIV",
+    "title": "Ultra Street Fighter IV",
+    "metacriticLink": "/game/ultra-street-fighter-iv/",
+    "dealID": "7JWDpApz3Yee5JDgO2UrtekSUc5XIOvkX6pwVcI%2B9xQ%3D",
+    "storeID": "1",
+    "gameID": "113336",
+    "salePrice": "3.89",
+    "normalPrice": "29.99",
+    "isOnSale": "1",
+    "savings": "87.029010",
+    "metacriticScore": "82",
+    "steamRatingText": "Very Positive",
+    "steamRatingPercent": "91",
+    "steamRatingCount": "8534",
+    "steamAppID": "45760",
+    "releaseDate": 1407369600,
+    "lastChange": 1698254614,
+    "dealRating": "8.9",
+    "thumb": "https://cdn.cloudflare.steamstatic.com/steam/apps/45760/capsule_sm_120.jpg?t=1687765428"
+  },
+  {
+    "internalName": "MASSEFFECTLEGENDARYEDITION",
+    "title": "Mass Effect Legendary Edition",
+    "metacriticLink": "/game/mass-effect-legendary-edition/",
+    "dealID": "y3FMzZnEmRe2zOrsfxcD3uHBpntwe%2BE64Ug0enLeGlU%3D",
+    "storeID": "1",
+    "gameID": "225750",
+    "salePrice": "9.59",
+    "normalPrice": "59.99",
+    "isOnSale": "1",
+    "savings": "84.014002",
+    "metacriticScore": "86",
+    "steamRatingText": "Very Positive",
+    "steamRatingPercent": "91",
+    "steamRatingCount": "36476",
+    "steamAppID": "1328670",
+    "releaseDate": 1620950400,
+    "lastChange": 1698342938,
+    "dealRating": "8.9",
+    "thumb": "https://cdn.cloudflare.steamstatic.com/steam/apps/1328670/capsule_sm_120.jpg?t=1669773470"
+  }
+
         ];
 
         const gameCardsContainer = document.getElementById("gameCards");
-        const loadMoreButton = document.getElementById("loadMoreButton");
-
-        let startIndex = 0; // Inicie com o primeiro jogo
-        const gamesPerPage = 12; // Quantidade de jogos por página
+        const searchInput = document.getElementById("searchInput");
+        const sortSelect = document.getElementById("sortSelect");
 
         function createGameCard(game) {
             const cardDiv = document.createElement("div");
@@ -120,9 +324,9 @@
                         <h5 class="card-title">${game.title}</h5>
                         <p class="card-text">Metacritic Score: ${game.metacriticScore}</p>
                         <p class="card-text">Steam Rating: ${game.steamRatingText} (${game.steamRatingPercent}%)</p>
-                        <p class="card-text">Price: $${game.salePrice}</p>
+                        <p class="card-text">Price: ${game.salePrice}</p>
                         <p class="card-text">Savings: ${game.savings}%</p>
-                        <a href="${game.metacriticLink}" class="btn btn-primary">Metacritic</a>
+                        <a href="#" class="btn btn-primary">Metacritic</a>
                         <a href="#" class="btn btn-success">Buy Now</a>
                     </div>
                 </div>
@@ -132,23 +336,44 @@
             gameCardsContainer.appendChild(cardDiv);
         }
 
-        function loadMoreGames() {
-            for (let i = startIndex; i < startIndex + gamesPerPage && i < gamesData.length; i++) {
-                createGameCard(gamesData[i]);
+        function loadGames() {
+            const sortedGames = [...gamesData]; // Crie uma cópia da matriz de jogos
+
+            // Aplicar pesquisa
+            const searchTerm = searchInput.value.trim().toLowerCase();
+            if (searchTerm !== "") {
+                sortedGames = sortedGames.filter(game => game.title.toLowerCase().includes(searchTerm));
             }
 
-            startIndex += gamesPerPage;
+            // Aplicar ordenação
+            const sortBy = sortSelect.value;
+            if (sortBy === "title") {
+                sortedGames.sort((a, b) => a.title.localeCompare(b.title));
+            } else if (sortBy === "releaseDate") {
+                sortedGames.sort((a, b) => a.releaseDate - b.releaseDate);
+            } else if (sortBy === "salePrice") {
+                sortedGames.sort((a, b) => a.salePrice - b.salePrice);
+            } else if (sortBy === "steamRatingCount") {
+                sortedGames.sort((a, b) => b.steamRatingCount - a.steamRatingCount);
+            }
 
-            if (startIndex >= gamesData.length) {
-                loadMoreButton.style.display = "none"; // Esconder o botão quando não houver mais jogos
+            // Limpar os cards existentes
+            gameCardsContainer.innerHTML = "";
+
+            // Renderizar os cards
+            for (let i = 0; i < sortedGames.length; i++) {
+                createGameCard(sortedGames[i]);
             }
         }
 
-        // Carregar os primeiros jogos
-        loadMoreGames();
+        // Carregar os jogos iniciais
+        loadGames();
 
-        // Lidar com o clique no botão "Carregar Mais"
-        loadMoreButton.addEventListener("click", loadMoreGames);
+        // Lidar com a mudança na entrada de pesquisa
+        searchInput.addEventListener("input", loadGames);
+
+        // Lidar com a mudança na seleção de ordenação
+        sortSelect.addEventListener("change", loadGames);
     </script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
