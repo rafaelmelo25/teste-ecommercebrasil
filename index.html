@@ -322,7 +322,6 @@
                     <img class="card-img-top" src="${game.thumb}" alt="Card image cap">
                     <div class="card-body">
                         <h5 class="card-title">${game.title}</h5>
-                        <p class="card-text">Metacritic Score: ${game.metacriticScore}</p>
                         <p class="card-text">Steam Rating: ${game.steamRatingText} (${game.steamRatingPercent}%)</p>
                         <p class="card-text">Price: ${game.salePrice}</p>
                         <p class="card-text">Savings: ${game.savings}%</p>
@@ -331,6 +330,20 @@
                     </div>
                 </div>
             `;
+            // const cardHTML = `
+            //     <div class="card" style="width: 18rem;">
+            //         <img class="card-img-top" src="${game.thumb}" alt="Card image cap">
+            //         <div class="card-body">
+            //             <h5 class="card-title">${game.title}</h5>
+            //             <p class="card-text">Metacritic Score: ${game.metacriticScore}</p>
+            //             <p class="card-text">Steam Rating: ${game.steamRatingText} (${game.steamRatingPercent}%)</p>
+            //             <p class="card-text">Price: ${game.salePrice}</p>
+            //             <p class="card-text">Savings: ${game.savings}%</p>
+            //             <a href="#" class="btn btn-primary">Metacritic</a>
+            //             <a href="#" class="btn btn-success">Buy Now</a>
+            //         </div>
+            //     </div>
+            // `;
 
             cardDiv.innerHTML = cardHTML;
             gameCardsContainer.appendChild(cardDiv);
