@@ -39,3 +39,123 @@
     line-height: normal;
     text-decoration-line: line-through;
 }
+
+body {
+    color: #fff !important;
+}
+
+ul {
+    list-style: none;
+}
+
+input.form-control {
+    background: #0B1641;
+    border-color: #0B1641;
+}
+
+select#sortSelect {
+    background: #0B1641;
+    border-color: #0B1641;
+    color: #fff;
+}
+
+.game-card {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 5px;
+    text-align: center;
+}
+
+.details-button {
+    background-color: #C70160 !important;
+    color: white;
+}
+
+.discount-button {
+    background-color: #16857B !important;
+    color: white;
+}
+
+.game-price {
+    font-size: 20px;
+    position: relative;
+}
+
+.game-price::before {
+    content: "R$" attr(data-original-price);
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translate(0, -50%);
+    text-decoration: line-through;
+    color: #777;
+}
+
+.game-price.top {
+    font-size: 20px;
+    /* margin-bottom: 5px; Adiciona um espaço entre os preços */
+}
+
+.game-price.bottom {
+    font-size: 20px;
+    margin-top: 5px; /* Adiciona um espaço entre os preços */
+}
+
+button#loadMoreButton {
+    background: #0B1641;
+    border-color: #0B1641;
+}
+
+footer {
+    background-color: #0B1641; /* Cor de fundo do footer */
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-direction: column;
+}
+
+.footer-logo img {
+    max-width: 100px;
+}
+
+.footer-text {
+    margin: 20px 0;
+}
+
+.footer-menu {
+    list-style: none;
+    padding: 0;
+    text-align: left; /* Alinha o menu à esquerda */
+}
+
+.footer-menu li {
+    display: inline;
+    margin-right: 20px;
+}
+
+.footer-menu a {
+    text-decoration: none;
+    color: white;
+}
+
+.has-search .form-control {
+    padding-left: 2.375rem;
+}
+
+.has-search .form-control-feedback {
+    position: absolute;
+    z-index: 2;
+    display: block;
+    width: 2.375rem;
+    height: 2.375rem;
+    line-height: 2.375rem;
+    text-align: center;
+    pointer-events: none;
+    color: #aaa;
+}
